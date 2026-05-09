@@ -13,7 +13,7 @@ metadata:
       title: GitHub Repository
       icon: github
 spec:
-  owner: user:AdamBrez
+  owner: user:adambrez
 
 ---
 apiVersion: backstage.io/v1alpha1
@@ -34,7 +34,7 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: user:AdamBrez
+  owner: user:adambrez
   system: angel
   dependsOn:
     - component:angel-commands
@@ -59,7 +59,7 @@ metadata:
 spec:
   type: library
   lifecycle: experimental
-  owner: user:AdamBrez
+  owner: user:adambrez
   system: angel
 
 ---
@@ -81,7 +81,7 @@ metadata:
 spec:
   type: library
   lifecycle: experimental
-  owner: user:AdamBrez
+  owner: user:adambrez
   system: angel
 
 ---
