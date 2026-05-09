@@ -1,0 +1,85 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: angel
+  title: Angel Home Assistant
+  description: A personal home assistant built in Python, handling messages, reminders, and commands.
+  tags:
+    - personal
+    - python
+    - home-assistant
+  links:
+    - url: https://github.com/AdamBrez/Angel
+      title: GitHub Repository
+      icon: github
+spec:
+  owner: user:AdamBrez
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: angel-core
+  title: Angel Core
+  description: >
+    The main entry point of the Angel assistant. Handles receiving and sending
+    messages and orchestrates the other modules.
+  tags:
+    - python
+    - core
+  links:
+    - url: https://github.com/AdamBrez/Angel/blob/main/main.py
+      title: main.py
+      icon: code
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:AdamBrez
+  system: angel
+  dependsOn:
+    - component:angel-commands
+    - component:angel-reminders
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: angel-commands
+  title: Angel Commands
+  description: >
+    Handles parsing and dispatching of user commands. Provides the command
+    vocabulary that the core assistant understands.
+  tags:
+    - python
+    - plugin
+  links:
+    - url: https://github.com/AdamBrez/Angel/blob/main/commands.py
+      title: commands.py
+      icon: code
+spec:
+  type: library
+  lifecycle: experimental
+  owner: user:AdamBrez
+  system: angel
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: angel-reminders
+  title: Angel Reminders
+  description: >
+    Manages time-based reminders. Tracks scheduled reminders and triggers
+    notifications back through the core messaging layer.
+  tags:
+    - python
+    - plugin
+  links:
+    - url: https://github.com/AdamBrez/Angel/blob/main/reminder.py
+      title: reminder.py
+      icon: code
+spec:
+  type: library
+  lifecycle: experimental
+  owner: user:AdamBrez
+  system: angel
