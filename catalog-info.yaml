@@ -83,3 +83,17 @@ spec:
   lifecycle: experimental
   owner: user:AdamBrez
   system: angel
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Adam Brezina
+spec:
+  # profile and its fields are optional
+  profile:
+    displayName: Adam Brezina
+    # email: jenny-doe@example.com
+    # picture: https://example.com/staff/jenny-with-party-hat.jpeg
+  # memberOf is required but since I am working alone I can leave it blank
+  memberOf: []
