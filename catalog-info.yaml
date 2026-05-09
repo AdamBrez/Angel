@@ -88,7 +88,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: Adam Brezina
+  name: adambrez
 spec:
   # profile and its fields are optional
   profile:
